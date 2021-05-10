@@ -1,9 +1,9 @@
 package one.digitalinnovation.collections
 
 fun main() {
-    val joao = funcionario("João", 1500.0, "CLT")
-    val pedro = funcionario("Pedro", 2500.0, "PJ")
-    val maria = funcionario("Maria", 2000.0, "CLT")
+    val joao = Funcionario("João", 1500.0, "CLT")
+    val pedro = Funcionario("Pedro", 2500.0, "PJ")
+    val maria = Funcionario("Maria", 2000.0, "CLT")
 
     val funcionarios = listOf(joao, pedro, maria)       // listOf serve para ordenar em uma lista os objetos
 
@@ -25,16 +25,3 @@ fun main() {
         .groupBy { it.tipoContratacao }   // .groupBy faz o agrupamento de uma determinada ordem, No caso de quem é PJ e CLT
         .forEach { println(it)}
 }
-
-
-data class funcionario(
-    val nome: String,
-    val salario: Double,
-    val tipoContratacao: String
-) {
-    override fun toString(): String =
-        """
-            Nome:    $nome 
-            Salário: $salario
-        """.trimIndent()
-  }
